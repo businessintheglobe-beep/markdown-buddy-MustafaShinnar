@@ -1,0 +1,83 @@
+---
+title: "Documentation for the Synthetic Sales Analysis Script"
+author: "Mustafa Shinnar"
+date: "October 15, 2026"
+output:
+  html_document: default
+---
+
+<!--
+AI Assistance Declaration:
+I used ChatGPT (GPT-6, October 31, 2026) for documentation planning and
+formatting suggestions. Prompts used are documented in README.md and
+Reflection.md. I will verify execution and calculations independently.
+All final calculations and verification are my responsibility.
+-->
+
+# Purpose
+
+The `sales_analysis.R` script demonstrates a simple analysis workflow using a
+small, fictional sales dataset. It calculates revenue for each example row,
+summarizes revenue by product category, prints the summary, and writes it to a
+CSV file.
+
+## Inputs
+
+The script creates its input data in code; no external data file is required.
+The dataset includes:
+
+- `date`: illustrative transaction date
+- `category`: fictional product category
+- `units`: number of units in an example transaction
+- `unit_price`: illustrative price per unit
+
+The script derives `revenue` by multiplying `units` by `unit_price`.
+
+## Process
+
+The script follows four steps:
+
+1. Create the synthetic data frame.
+2. Calculate row-level revenue.
+3. Aggregate revenue by category and sort the result.
+4. Print the summary and export it as `sales_summary.csv`.
+
+## Example Code
+
+The following excerpt groups revenue by category:
+
+```{r, eval=FALSE}
+sales_summary <- aggregate(
+  revenue ~ category,
+  data = sales_data,
+  FUN = sum
+)
+```
+
+The chunk is marked `eval=FALSE` because it illustrates a portion of the script
+and is not intended to run independently without first creating `sales_data`.
+
+## Outputs
+
+- **Console:** a table showing total revenue for each category.
+- **CSV file:** `sales_summary.csv`, written to the current working directory.
+
+The CSV file is created when the R script is run. It is not an input to the script.
+
+## How to Run
+
+From the project directory, run:
+
+```{r, eval=FALSE}
+source("sales_analysis.R")
+```
+
+To knit this documentation, open `sales_analysis_documentation.Rmd` in RStudio
+or Posit Cloud and select **Knit**. Confirm that the document renders correctly.
+
+## Verification Notes
+
+Before submission, run the script yourself, inspect the console and CSV output,
+independently check at least one calculation in a spreadsheet, and self-spot-check
+the category totals. Record any corrections made after testing. Do not mark these
+checks complete until you have performed them.

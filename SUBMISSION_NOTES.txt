@@ -1,0 +1,8 @@
+SUBMISSION NOTES
+
+1. Rename the repository to markdown-buddy-[yourname] and replace [yourname].
+2. Replace the author placeholder in the Rmd and placeholders in LICENSE.
+3. The assignment PDF does not state the three reflection question wordings. Compare Reflection.md with the questions shown in the LMS and adapt if needed.
+4. Run sales_analysis.R in R/RStudio, independently check at least one calculation, inspect sales_summary.csv, and knit the Rmd.
+5. Preview README.md in GitHub. Only claim checks were completed after you personally complete them.
+6. Upload the required files to your GitHub repository and submit the repository/files through the LMS as instructed.
